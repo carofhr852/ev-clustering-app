@@ -5,16 +5,7 @@ library(tidyr)
 library(shiny)
 library(cluster)
 
-# Read the dataset
-ev_data <- read.csv("Electric_Vehicle_Population_Data.csv")
-
-# Sample dataset for Github keeping key columns
-sample_data <- ev_data %>%
-  select(VIN..1.10., City, Electric.Range, Base.MSRP, Electric.Vehicle.Type) %>%
-  distinct() %>%
-  head(100)  # or use sample_n(ev_data, 100)
-write.csv(sample_data, "sample_ev_data.csv", row.names = FALSE)
-
+# Read the sample dataset
 ev_data <- read.csv("sample_ev_data.csv")
 
 # Basic cleaning and summarization by city
